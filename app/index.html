@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
+      <!-- <link rel="icon" type="image/png" href="img/favicon.ico" /> -->
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="css/style.css" />
+      <title>Sign up</title>
+   </head>
+
+   <body>
+      <!-- <a class="skip-link" href="#content">Hoppa till innehåll</a> -->
+      <div class="theme-switch-wrapper">
+         <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <span class="slider round"></span>
+         </label>
+         <em>Dark Mode</em>
+      </div>
+
+      <div class="signup">
+         <div class="container flow-content">
+            <form class="flow-content" id="signup-form" action="/" method="post" onsubmit="return !!(checkPassword(this) & checkCaptcha());">
+               <h1>Create your future</h1>
+               <div class="flow-content--x-large">
+                  <label for="name">
+                     <span>Your Name</span>
+                     <input id="name" placeholder="Sylvester Stallone" tabindex="1" type="text" autocomplete="on" inputmode="text" enterkeyhint="next" required />
+                  </label>
+               </div>
+               <div>
+                  <label for="email">
+                     <span>Email</span>
+                     <input id="email" placeholder="example@domain.com" tabindex="2" type="email" autocomplete="on" inputmode="email" enterkeyhint="next" required />
+                  </label>
+               </div>
+               <div>
+                  <label for="password">
+                     <span>Password</span>
+                     <input id="password" name="password1" tabindex="3" type="password" autocomplete="new-password" minlength="8" title="Must contain at least 8 characters" pattern="{8,}" inputmode="text" enterkeyhint="next" required />
+                  </label>
+               </div>
+               <div>
+                  <label for="confirm_password">
+                     <span>Confirm password</span>
+                     <input id="confirm_password" name="password2" tabindex="4" type="password" autocomplete="new-password" minlength="8" title="Must contain at least 8 characters" inputmode="text" pattern="{8,}" enterkeyhint="send" required />
+                  </label>
+               </div>
+               <div id="pwderror"></div>
+               <div class="g-recaptcha" data-sitekey="6Lcn8wwaAAAAAMq4nNQmkvWM1TKXuVu-Zd11-RuB" data-callback="verifyCaptcha"></div>
+               <div id="g-recaptcha-error"></div>
+               <div>
+                  <button name="submit" type="submit" value="Submit" id="signup-submit">Create an account</button>
+               </div>
+            </form>
+            <p>By clicking ‘Create an account’ you agree to SlyArchitectureAndFuture.com <a href="#">User License</a> and <a href="#">Privacy Policy</a></p>
+            <div class="divider"><p>or continue with</p></div>
+            <ul role="list" class="social-signup split">
+               <li>
+                  <a href="#"><img src="/img/apple.png" alt="Sign up with apple" /></a>
+               </li>
+               <li>
+                  <a href="#"><img src="/img/facebook.png" alt="Sign up with facebook" /></a>
+               </li>
+               <li>
+                  <a href="#"><img src="/img/github.png" alt="Sign up with github" /></a>
+               </li>
+            </ul>
+            <div class="center flow-content--x-large">
+               <p>Already have an account? <a href="#">Log in</a></p>
+            </div>
+         </div>
+      </div>
+      <script src="js/recaptcha.js"></script>
+      <script src="js/pwdcheck.js"></script>
+      <script src="js/darkmode.js"></script>
+   </body>
+</html>
